@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="modal">
+        <button class="close-btn" (click)="closeModal()"><div class="inner"><span></span></div></button>
+        <div class="inner-container">
+            <h1>Личный кабинет</h1>
+            <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
+                <label>E-mail<span>*</span><br><span class="error" *ngIf="formSubmitted && form.controls.email.invalid">Неверно указан email</span>
+                    <input type="email" name="email" ngModel required email minlength="9">
+                </label>
+                <label>Password<span>*</span><br><span class="error" *ngIf="formSubmitted && form.controls.password.invalid">Неверно указан пароль</span>
+                    <input type="password" name="password" ngModel required minlength="6">
+                </label>
+                <a routerLink="">Забыли пароль?</a>
+                <div class="btns-row">
+                    <button type="submit" class="log-in">Войти</button>
+                    <button (click)="openRegistration()" routerLink="registration" class="registration">Регистрация</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

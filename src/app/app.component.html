@@ -1,0 +1,78 @@
+<div class="container">
+    <!-- Модалка -->
+    <div class="modal-container" *ngIf="modal">
+        <app-modal (close)="openModal()"></app-modal>
+    </div>
+    <!-- Навигационная панель -->
+  <nav class="navigation">
+      <div class="inner-container">
+          <button class="menu-btn" (click)="menuOpen()"><span [ngClass]="{'openMenu': menu}"></span></button>
+          <div class="tel-container">
+              <a href="tel: +79852522225" class="tel-icon"><img src="../assets/icons/tel.png" alt="telephone"></a>
+              <h3 class="tel-numbers">+7(812)345-32-31<br>+7(985)252-22-25</h3>
+          </div>
+          <img src="../assets/white-logo.png" alt="logotype" class="logo" routerLink="/">
+          <div class="user-buttons-container">
+              <button (click)="openModal()"><img src="../assets/icons/account.png" alt="account"></button>
+              <button><img src="../assets/icons/bin.png" alt="bin"></button>
+              <button class="placeholder"><img src="../assets/icons/placeholder.png" alt="placeholder"><span>{{ placeholder }}</span></button>
+          </div>
+      </div>
+  </nav>
+  <div class="menu-container" *ngIf="menu" [ngClass]="{'open-menu-container': menu}">
+      <app-menu [placeholder]="placeholder"></app-menu>
+  </div>
+  <!-- Контент -->
+  <router-outlet></router-outlet>
+  <!-- Футер -->
+  <footer class="page-footer">
+      <div class="inner-container">
+          <div class="logo-container">
+              <img src="../assets/black-logo.png" alt="logotype" class="logo">
+              <p class="copyright">© 2018–2019 INSALUT</p>
+          </div>
+          <div class="links-container">
+              <h1>О компании</h1>
+              <div class="links">
+                <a routerLink="">О продукции</a>
+                <a routerLink="">Сертификаты</a>
+                <a routerLink="">Отзывы</a>
+              </div>
+          </div>
+          <div class="links-container">
+              <h1>Сервис</h1>
+              <div class="links">
+                <a routerLink="">Доставка</a>
+                <a routerLink="">Оплата</a>
+                <a routerLink="">Корпоративным клиентам</a>
+              </div>
+          </div>
+          <div class="links-container">
+              <h1>Контакты</h1>
+              <div class="links">
+                  <div class="row">
+                      <img src="./assets/icons/email.png" alt="email" class="contact-icon">
+                      <p>info@insalut.com</p>
+                  </div>
+                  <div class="row">
+                      <img src="./assets/icons/geo.png" alt="geo" class="contact-icon">
+                      <p>111141, Москва,
+                            3-ий проезд 
+                            Перова Поля, 4А</p>
+                  </div>
+                  <div class="row">
+                      <img src="./assets/icons/clock.png" alt="clock" class="contact-icon">
+                      <p>ПН-ПТ<br>10:00-12:00</p>
+                  </div>
+              </div>
+          </div>
+          <div class="share-container">
+                <div class="wrapper">
+                    <a href="" class="facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="" class="vk"><i class="fab fa-vk"></i></a>
+                    <a href="" class="insta"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+      </div>
+  </footer>
+</div>

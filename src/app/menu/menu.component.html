@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="inner-container">
+        <nav>
+            <img src="../assets/black-logo.png" alt="logotype" class="logo">
+            <app-search></app-search>
+            <div class="tel-container">
+                <a href="tel: +79852522225" class="tel-icon"><img src="../assets/black-icons/tel.png" alt="telephone"></a>
+                <h3 class="tel-numbers">+7(812)345-32-31<br>+7(985)252-22-25</h3>
+            </div>
+            <div class="user-buttons-container">
+                <button><img src="../assets/black-icons/account.png" alt="account"></button>
+                <button><img src="../assets/black-icons/bin.png" alt="bin"></button>
+                <button class="placeholder"><img src="../assets/black-icons/placeholder.png" alt="placeholder"><span>{{ placeholder }}</span></button>
+            </div>
+        </nav>
+        <div class="links-container">
+            <div class="production-links">
+                <a href="" class="production-link">Продукция</a>
+                <div class="category-container">
+                    <a href="" *ngFor="let item of categories">{{ item.text }}</a>
+                </div>
+            </div>
+            <div class="other-links">
+                <a routerLink="">Корпоративным клиентам</a>
+                <a routerLink="">Доставка и оплата</a>
+                <a routerLink="">Скидки</a>
+                <a routerLink="">Контакты</a>
+                <a routerLink="">Отзывы</a>
+                <a routerLink="">Сертификаты</a>
+            </div>
+        </div>
+        <footer>
+            <h4>Праздник, который всегда с тобой</h4>
+            <div class="share-container">
+                <h1>Мы в соцсетях:</h1>
+                <div class="wrapper">
+                    <a href="" class="facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="" class="vk"><i class="fab fa-vk"></i></a>
+                    <a href="" class="insta"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

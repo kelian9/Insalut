@@ -1,0 +1,10 @@
+<div class="container" [ngClass]="{'swap-slide': swap}" [ngStyle]="{'background-image':'url(' + activeSlide.bgUrl + ')'}">
+    <div class="inner-container">
+        <h1>{{ activeSlide.heading }}</h1>
+        <h4>{{ activeSlide.text }}</h4>
+        <button [routerLink]="activeSlide.btnPath">{{ activeSlide.btnText }}</button>
+    </div>
+    <div class="switches-container">
+        <button *ngFor="let item of switches;let i = index" (click)="switch(i)" [ngClass]="{'active': item.active}"></button>
+    </div>
+</div>

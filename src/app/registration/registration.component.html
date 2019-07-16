@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Регистрация</h1>
+    <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="switch-container">
+            <label><span class="checkbox" [ngClass]="{'active': user.phys}"></span>
+                <input type="checkbox" [checked]="user.phys" (click)="switchUser()" name="phys" id="phys"><span class="text" #physBtn>физ лицо</span>
+            </label>
+            <label><span class="checkbox" [ngClass]="{'active': user.entity}"></span>
+                <input type="checkbox" [checked]="user.entity" (click)="switchUser()" name="entity" id="entity"><span class="text" #entityBtn>юр лицо</span>
+            </label>
+        </div>
+        <div class="fields">
+            <div class="fields-container phys-container">
+                <label>Фамилия Имя<span class="red">*</span><span class="error red" *ngIf="formSubmitted && name.errors">Форма заполнена неверно</span><br>
+                    <input type="name" name="name" ngModel #name="ngModel" required minlength="7">
+                </label>
+                <label>E-mail<span class="red">*</span><span class="error red" *ngIf="formSubmitted && email.errors">Форма заполнена неверно</span><br>
+                    <input type="email" name="email" required email ngModel #email="ngModel">
+                </label>
+                <label>Телефон<span class="red">*</span><span class="error red" *ngIf="formSubmitted && tel.errors">Форма заполнена неверно</span><br>
+                    <input type="tel" name="tel" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" ngModel #tel="ngModel">
+                </label>
+                <label>Пароль<span class="red">*</span><span class="error red" *ngIf="formSubmitted && password.errors">Форма заполнена неверно</span><br>
+                    <input type="password" name="password" required ngModel #password="ngModel" minlength="6">
+                </label>
+                <label>Подтверждение пароля<span class="red">*</span><span class="error red" *ngIf="formSubmitted && phys.password != confirmPassword">Неверно</span><br>
+                    <input type="password" name="confirm" [(ngModel)]="confirmPassword" required>
+                </label>
+            </div>
+            <div class="fields-container entity-container" *ngIf="user.entity">
+                <label class="company">Наименование компании<span class="red">*</span><span class="error red" *ngIf="formSubmitted && company.errors">Форма заполнена неверно</span><br>
+                    <input type="text" name="company" [required]="user.entity" ngModel #company="ngModel">
+                </label>
+                <label class="inn">ИНН<span class="red">*</span><span class="error red" *ngIf="formSubmitted && inn.errors">Форма заполнена неверно</span><br>
+                    <input type="text" name="inn" [required]="user.entity" ngModel #inn="ngModel">
+                </label>
+            </div>
+        </div>
+        <button type="submit">Регистрация</button>
+    </form>
+</div>
