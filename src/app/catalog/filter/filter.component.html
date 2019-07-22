@@ -1,15 +1,22 @@
 <div class="container">
     <h1>Фильтры</h1>
-    <form>
-        <label>
-            <h2></h2>
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+        <label *ngFor="let item of properties;let index = index;">
+            <h2>{{ item.name }}</h2>
             <div class="range">
                 <p>от</p>
-                <input type="text" name="price" id="price-min">
+                <input type="text" [name]="item.id + 'min'" [(ngModel)]="props[item.id][0]" [id]="item.id + '-min'">
                 <p>до</p>
-                <input type="text" name="price" id="price-max"><br>
-                <div id="slider-range"></div>
+                <input type="text" [name]="item.id + 'max'" [(ngModel)]="props[item.id][1]" [id]="item.id + '-max'">
+            </div>
+            <div [id]="'slider-range' + index" class="slider-range"></div>
+        </label>
+        <label class="effects-label">
+            <h2>Эффект разрыва</h2>
+            <div class="effects-container">
+                <img (click)="selectEffect(effect)" [src]="effect.iconPath" alt="" *ngFor="let effect of effects">
             </div>
         </label>
+        <button type="submit">Применить</button>
     </form>
 </div>

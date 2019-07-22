@@ -9,7 +9,7 @@ export class CatalogComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
 }

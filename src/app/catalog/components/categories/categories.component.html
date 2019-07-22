@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="heading">
+        <h3>Каталог</h3>
+        <h1>Пиротехнические изделия</h1>
+        <p>Добавьте ярких, праздничных красок в свой праздник! Широкий ассортимент товаров от 
+            компании INSALUT позволит подобрать уникальное сочетание продуктов подходящих 
+            именно Вам.
+        </p>
+    </div>
+    <div class="links-container">
+        <div class="link" (click)="openProducts(item.category, item.heading)" *ngFor="let item of categories" [ngStyle]="{'background-image' : 'url(' + item.bgPath + ')'}">
+            <h1>{{ item.heading }}</h1>
+        </div>
+    </div>
+</div>

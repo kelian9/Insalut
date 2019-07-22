@@ -16,6 +16,10 @@ import { FormsModule } from '@angular/forms';
 import { RegistrationModule } from './registration/registration.module';
 import { AuthorizationService } from './authorization/authorization.service';
 import { FilterComponent } from './catalog/filter/filter.component';
+import { CategoriesComponent } from './catalog/components/categories/categories.component';
+import { ProductsComponent } from './catalog/components/products/products.component';
+import { ProductCardComponent } from './catalog/components/product-card/product-card.component';
+import { ProductDetailsComponent } from './catalog/components/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { FilterComponent } from './catalog/filter/filter.component';
     SliderComponent,
     SalesComponent,
     ModalComponent,
-    FilterComponent
+    FilterComponent,
+    CategoriesComponent,
+    ProductsComponent,
+    ProductCardComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,119 @@
+%display-flex-column {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;    
+}
+%display-flex-row {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    // width: 285px;
+    width: 100%;
+    min-width: 285px;
+    height: 730px;
+    @extend %display-flex-column;
+    justify-content: space-around;
+    background-color: #d8dcdd;
+    border-radius: 7px;
+}
+
+h1 {
+    width: 75%;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgb( 15, 18, 21 );
+    text-transform: uppercase;
+}
+
+form {
+    width: 100%;
+    height: 88%;
+    @extend %display-flex-column;
+    label {
+        width: 75%;
+        height: 80px;
+        @extend %display-flex-column;
+        h2 {
+            width: 100%;
+            font-size: 18px;
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: 400;
+            text-align: left;
+            color: rgb( 15, 18, 21 );
+        }
+        .range {
+            width: 100%;
+            height: 80%;
+            @extend %display-flex-row;
+        }
+        p {
+            width: 20px;
+            font-size: 18px;
+            font-family: "Roboto Condensed", sans-serif;
+            color: rgb( 15, 18, 21 );
+        }
+        input {
+            width: 30%;
+            height: 25px;
+            padding-left: 5px;
+            box-sizing: border-box;
+            border: 1px solid rgb( 15, 18, 21 );
+            border-radius: 4px;
+            font-family: "Roboto Condensed", sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            outline: none;
+            &:focus {
+                box-shadow: 0px 0px 10px 10px #ffffff;
+            }
+        }
+        .slider-range {
+            width: 100%;
+        }
+    }
+    .effects-label {
+        width: 90%;
+        height: 130px;
+        h2 {
+            width: 80%;
+        }
+        .effects-container {
+            width: 105%;
+            height: 80%;
+            @extend %display-flex-row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            img {
+                width: 45px;
+                height: 45px;
+                margin-left: 2.5%;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+button {
+    width: 170px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #ff5e57;
+    border: 0;
+    transition: 0.3s;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: antiquewhite;
+    cursor: pointer;
+    &:hover {
+        background-color: #ff534a;
+    }
+}

@@ -1,3 +1,13 @@
 <div class="container">
-    <app-filter></app-filter>
+    <div class="main-content">
+        <div class="filter">
+            <app-filter></app-filter>
+        </div>
+        <div class="content-container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="sales-container">
+        <app-sales></app-sales>
+    </div>
 </div>
