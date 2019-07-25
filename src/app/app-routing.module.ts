@@ -5,6 +5,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProductsComponent } from './catalog/components/products/products.component';
 import { CategoriesComponent } from './catalog/components/categories/categories.component';
+import { ProductDetailsComponent } from './catalog/components/product-details/product-details.component';
 
 const catalogRoutes: Routes = [
   {path:'', component: CategoriesComponent},
@@ -22,6 +23,7 @@ const catalogRoutes: Routes = [
 
 const routes: Routes = [
   {path: '', component: MainComponent},
+  {path: 'catalog/:category/:id', component: ProductDetailsComponent},
   {path: 'catalog/', component: CatalogComponent},
   {path: 'catalog', component: CatalogComponent, children: catalogRoutes},
   {path: 'registration', component: RegistrationComponent}

@@ -1,1 +1,40 @@
-<p>product-details works!</p>
+<div class="container">
+    <div class="inner-container">
+        <h2>Каталог / {{ product.category.translate }}</h2>
+        <div class="product-content">
+            <div class="photo-container">
+                <div class="minies">
+                    <div class="img-container" [ngClass]="{'active-photo': activateImage(item)}" (click)="selectImage(item)" *ngFor="let item of product.imgPath">
+                        <img [src]="item" alt="" class="mini">
+                    </div>
+                </div>
+                <div class="img-container">
+                    <img [src]="selectedImage" alt="" class="big-photo">
+                </div>
+            </div>
+            <div class="product-info">
+                <h1>{{ product.heading + product.id }}</h1>
+                <p class="description">{{ product.description }}</p>
+                <div class="product-data">
+                    <p>Зарядов : {{ product.data.babah }}</p>
+                    <p>Высота : {{ product.data.height }}</p>
+                    <p>Калибр : {{ product.data.caliber }}</p>
+                    <p>Время : {{ product.data.time }}</p>
+                </div>
+                <a href="" class="youtube-btn"><i class="far fa-play-circle" style="color: white;font-size: 22px;font-weight: 300;padding-right: 10px;"></i> Смотреть</a>
+                <div class="buy-container">
+                    <div class="number-container">
+                        <button (click)="sub()">-</button>
+                        <p class="number">{{ productCount }}</p>
+                        <button (click)="add()">+</button>
+                    </div>
+                    <button class="bin">Добавить в корзину</button>
+                </div>
+            </div>
+        </div>
+        <div class="similar-products">
+            <h2>Вам так же может понравиться :</h2>
+            <app-products-slider [selectedProducts]="similarProducts"></app-products-slider>
+        </div>
+    </div>
+</div>

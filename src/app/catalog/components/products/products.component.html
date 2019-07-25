@@ -1,4 +1,9 @@
 <div class="container">
-    <h3>Каталог {{ selectedCategory }}</h3>
-    AAAAAAAAAAA
+    <div class="heading">
+        <h3>Каталог / {{ selectedCategory.heading }}</h3>
+        <h1>{{ selectedCategory.heading }}</h1>
+    </div>
+    <div class="products-container">
+        <app-product-card [item]="item" *ngFor="let item of products"></app-product-card>
+    </div>
 </div>

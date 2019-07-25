@@ -1,0 +1,96 @@
+%display-flex-column {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;    
+}
+%display-flex-row {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 90%;
+    @extend %display-flex-row;
+}
+
+button {
+    width: 50px;
+    height: 100%;
+    @extend %display-flex-row;
+    justify-content: space-around;
+    border: 0;
+    background: transparent;
+    transition: 0.3s;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        color: #ffffff;
+        .arrow {
+            color: #ffffff;
+        }
+    }
+    .arrow {
+        transition: 0.3s;
+        color: #bec2c3;
+    }
+}
+
+.content {
+    width: calc(100% - 100px);
+    height: 100%;
+    @extend %display-flex-column;
+}
+
+.slider {
+    width: 100%;
+    height: 95%;
+    position: relative;
+    overflow: hidden;
+    .inner-container {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        transition: 0.4s;
+        @extend %display-flex-row;
+    }
+}
+
+.switches-container {
+    width: 50px;
+    height: 20px;
+    @extend %display-flex-row;
+    align-self: flex-end;
+    button {
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        margin-right: 4px;
+        border: 1px solid #bbbfc1;
+        border-radius: 100%;
+        background: transparent;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .active-slide-btn {
+        background: #ff5e57;
+        border-color: #ff5e57;
+    }
+}
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .slider {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: hidden;
+    }
+}

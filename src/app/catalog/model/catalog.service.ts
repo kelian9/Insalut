@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from './category.model';
+import { Product } from './product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,19 +28,41 @@ export class CatalogService {
     heading: ''
   };
 
-  // public selectCategory(category:string, heading:string) {
-  //   this.selectedCategory = {
-  //     category: category,
-  //     heading: heading.charAt(0).toUpperCase() + heading.slice(1)
-  //   };
-  // }
+  private products:Product[] = [];
 
   public getCategory() {
-    // if (this.selectedCategory.heading == '') {
-      let h = this.categories.filter((item) => item.category == this.router.url.slice(9));
-      this.selectedCategory.heading = h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1);
-      this.selectedCategory.category = h[0].category;
-    // }
+    let h = this.categories.filter((item) => item.category == this.router.url.slice(9));
+    this.products = [];
+    for (let i = 0; i < 9; i++) {
+      this.products.push(new Product(i, {category: h[0].category, translate: h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png','/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315, 'Описание карточки товара'));
+    }
+    console.log(this.products[0]);
+    this.selectedCategory.heading = h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1);
+    this.selectedCategory.category = h[0].category;
     return this.selectedCategory;
+  }
+
+  public getProducts(filterData, category:string):Product[] {
+    return this.products.filter((product => product.category.category == category));
+  }
+
+  private filter:boolean = true;
+
+  public openProductDetails(id:number) {
+    let h = this.categories.filter((item) => {
+      let index = this.router.url.slice(9).indexOf('/');
+      console.log(this.router.url.substr(9, index));
+      return item.category == this.router.url.substr(9, index);
+    });
+    console.log(h);
+    this.products = [];
+    for (let i = 0; i < 9; i++) {
+      this.products.push(new Product(i, {category: h[0].category, translate: h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png', '/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315 * (i+1), 'Описание карточки товара'));
+    }
+    this.filter = false;
+    console.log(this.filter);
+    console.log(id);
+    console.log(this.products[id]);
+    return this.products[id];
   }
 }

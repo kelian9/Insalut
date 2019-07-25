@@ -7,7 +7,6 @@ import { MainComponent } from './main/main.component';
 import { MenuComponent } from './menu/menu.component';
 import { PopularProductsComponent } from './main/popular-products/popular-products.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { SearchComponent } from './search/search.component';
 import { SliderComponent } from './main/slider/slider.component';
 import { SalesComponent } from './sales/sales.component';
@@ -20,6 +19,7 @@ import { CategoriesComponent } from './catalog/components/categories/categories.
 import { ProductsComponent } from './catalog/components/products/products.component';
 import { ProductCardComponent } from './catalog/components/product-card/product-card.component';
 import { ProductDetailsComponent } from './catalog/components/product-details/product-details.component';
+import { ProductsSliderComponent } from './catalog/components/products-slider/products-slider.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { ProductDetailsComponent } from './catalog/components/product-details/pr
     CategoriesComponent,
     ProductsComponent,
     ProductCardComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductsSliderComponent
   ],
   imports: [
     BrowserModule,
