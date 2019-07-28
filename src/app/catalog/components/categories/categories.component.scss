@@ -79,3 +79,28 @@
         border-color: #c34040;
     }
 }
+
+// 
+// 
+// 
+
+@media screen and (max-width: 600px) {
+    .heading {
+        width: 90%;
+        text-align: center;
+        p, h1, h3 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .container {
+        height: 2500px;
+    }
+    .links-container {
+        height: 92%;
+        flex-direction: column;
+    }
+    .link {
+        width: 100%;
+    }
+}

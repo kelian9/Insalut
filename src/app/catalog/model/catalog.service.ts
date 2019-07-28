@@ -31,6 +31,7 @@ export class CatalogService {
   private products:Product[] = [];
 
   public getCategory() {
+    // Отправлять запрос с категорией(для получения массива товаров конкретной категории)
     let h = this.categories.filter((item) => item.category == this.router.url.slice(9));
     this.products = [];
     for (let i = 0; i < 9; i++) {
@@ -43,12 +44,24 @@ export class CatalogService {
   }
 
   public getProducts(filterData, category:string):Product[] {
+    // Отправлять запрос с категорией товара и данными с фильтра
     return this.products.filter((product => product.category.category == category));
+  }
+
+  public getPopularProducts() {
+    //отправлять запрос на сервер для получения массива популярных товаров
+    if (this.products.length == 0) {
+      for (let i = 0; i < 9; i++) {
+        this.products.push(new Product(i, {category: 'sets', translate: 'наборы'.charAt(0).toUpperCase() + 'наборы'.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png', '/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315 * (i+1), 'Описание карточки товара'));
+      }
+    }
+    return this.products;
   }
 
   private filter:boolean = true;
 
   public openProductDetails(id:number) {
+    // Отправлять запрос с id товара
     let h = this.categories.filter((item) => {
       let index = this.router.url.slice(9).indexOf('/');
       console.log(this.router.url.substr(9, index));

@@ -1,10 +1,9 @@
-<div class="container" [ngClass]="{'swap-slide': swap}" [ngStyle]="{'background-image':'url(' + activeSlide.bgUrl + ')'}">
-    <div class="inner-container">
-        <h1>{{ activeSlide.heading }}</h1>
-        <h4>{{ activeSlide.text }}</h4>
-        <button [routerLink]="activeSlide.btnPath">{{ activeSlide.btnText }}</button>
+<div class="container">
+    <div class="inner-container"
+     [ngStyle]="{'width': 100 * slides.length + '%', 'left' : slidePosition + '%'}">
+        <div class="slide" [ngStyle]="{'width' : 100 / slides.length + '%'}" *ngFor="let item of slides"><app-slide [slide]="item"></app-slide></div>
     </div>
     <div class="switches-container">
-        <button *ngFor="let item of switches;let i = index" (click)="switch(i)" [ngClass]="{'active': item.active}"></button>
+        <button *ngFor="let item of slides;let i = index" (click)="switch(i)" [ngClass]="{'active': i == activeSlide}"></button>
     </div>
 </div>

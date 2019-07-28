@@ -17,7 +17,7 @@
             <div class="production-links">
                 <a href="" class="production-link">Продукция</a>
                 <div class="category-container">
-                    <a href="" *ngFor="let item of categories">{{ item.text }}</a>
+                    <a href="" [routerLink]="'catalog' + item.category" *ngFor="let item of categories">{{ item.text }}</a>
                 </div>
             </div>
             <div class="other-links">

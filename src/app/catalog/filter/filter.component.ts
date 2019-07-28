@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FilterProperty } from '../model/filter-property.model';
 import { Effect } from '../model/effect';
 import { NgForm } from '@angular/forms';
@@ -13,8 +13,15 @@ declare let $: any;
 })
 
 export class FilterComponent implements OnInit {
-
+  @Output() closeMobileFilter:EventEmitter<boolean> = new EventEmitter();
+  @Input() hide:boolean;
   constructor() { }
+
+  public closeFilter() {
+    this.closeMobileFilter.emit(false);
+  }
+
+  public closeBtn:boolean = (document.documentElement.clientWidth < 600) ? true : false;
 
   public properties:FilterProperty[] = [
     {name: 'Цена', range: [50, 50000], id: 'price'},
@@ -43,11 +50,6 @@ export class FilterComponent implements OnInit {
 
   public onSubmit(form:NgForm) {
     let filterData:{} = {
-      // price: [form.value.pricemin, form.value.pricemax],
-      // time: [form.value.timemin, form.value.timemax],
-      // babah: [form.value.babahmin, form.value.babahmax],
-      // height: [form.value.heightmin, form.value.heightmax],
-      // caliber: [form.value.calibermin, form.value.calibermax],
       props: this.props,
       effects: this.effects.filter((item) => item.selected == true)
     }
@@ -91,6 +93,5 @@ export class FilterComponent implements OnInit {
       });
       this.props = props;
     }
-
   }
 }

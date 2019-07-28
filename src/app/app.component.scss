@@ -33,7 +33,7 @@
         height: 100%;
     }
     .logo {
-        margin-left: -90px
+        margin-left: -90px;
     }
 }
 
@@ -139,8 +139,8 @@ button {
         }
     }
     .links-container {
-        height: 100%;
         width: 220px;
+        height: 100%;
         @extend %display-flex-column;
         h1 {
             width: 100%;
@@ -191,4 +191,51 @@ button {
     font-size: 11px;
     font-family: "Montserrat", sans-serif;
     color: rgb( 15, 18, 21 );
+}
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .menu-container {
+        width: 100%;
+        height: 120vh;
+        transform: translateX(-90%);
+        transition: 0.4s;
+    }
+    .open-menu-container {
+        transform: translateX(0);
+    }
+    .navigation {
+        .logo {
+            width: 90px;
+            height: 65px;
+            margin-left: 40px;
+        }
+    }
+    .page-footer {
+        .inner-container {
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .logo-container {
+            order: 2;
+            height: 60%;
+            .logo {
+                margin-top: 0;
+            }
+        }
+        .links-container {
+            display: none;
+        }
+        .share-container {
+            height: 40%;
+            order: 1;
+            align-self: center;
+        }
+    }
+    .copyright {
+        margin-top: 0;  
+    }
 }

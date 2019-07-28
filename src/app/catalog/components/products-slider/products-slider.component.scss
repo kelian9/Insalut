@@ -54,7 +54,6 @@ button {
     overflow: hidden;
     .inner-container {
         position: absolute;
-        width: 200%;
         height: 100%;
         transition: 0.4s;
         @extend %display-flex-row;
@@ -75,6 +74,7 @@ button {
         border-radius: 100%;
         background: transparent;
         transition: 0.3s;
+        outline: none;
         cursor: pointer;
     }
     .active-slide-btn {
@@ -92,5 +92,12 @@ button {
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
         overflow-y: hidden;
+    }
+    .card-container {
+        width: 80vw;
+    }
+    .switches-container {
+        width: 80%;
+        align-self: center;
     }
 }

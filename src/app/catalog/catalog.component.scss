@@ -34,11 +34,44 @@
     width: 64%;
 }
 
-.component {
-    width: 100%;
-    height: 100%;
-}
-
 .sales-container {
     width: 100%;
+}
+
+.filter-btn {
+    width: 170px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #ff5e57;
+    border: 0;
+    transition: 0.3s;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    color: antiquewhite;
+    cursor: pointer;
+    &:hover {
+        background-color: #ff534a;
+    }
+}
+
+.filter-btn-active {
+    height: 0;
+}
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .filter {
+        width: 90%;
+    }
+    .content-container {
+        width: 90%;
+        margin-top: 30px;
+    }
 }

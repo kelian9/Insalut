@@ -13,6 +13,10 @@
     align-items: center;
 }
 
+.hide {
+    transform: scaleY(0);
+}
+
 .container {
     // width: 285px;
     width: 100%;
@@ -22,6 +26,8 @@
     justify-content: space-around;
     background-color: #d8dcdd;
     border-radius: 7px;
+    transition: 0.4s;
+    transform-origin: top;
 }
 
 h1 {
@@ -116,4 +122,11 @@ button {
     &:hover {
         background-color: #ff534a;
     }
+}
+
+a {
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ff5e57;
+    cursor: pointer;
 }

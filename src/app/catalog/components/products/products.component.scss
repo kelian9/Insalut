@@ -32,10 +32,10 @@ h1 {
 }
 
 .products-container {
+    width: 87%;
     height: 90%;
     margin-left: -20px;
     @extend %display-flex-row;
-    justify-content: flex-start;
     flex-wrap: wrap;
     font-size: 25px;
     font-family: "Montserrat",sans-serif;
@@ -43,8 +43,30 @@ h1 {
     text-transform: uppercase;
 }
 
+.card-container {
+    width: 225px;
+}
+
 @media screen and (max-width: 1400px) {
     .products-container {
         margin-left: -15px;
+    }
+}
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .heading {
+        width: 87%;
+        margin: 0 auto;
+    }
+    .products-container {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .card-container {
+        width: 100%;
     }
 }

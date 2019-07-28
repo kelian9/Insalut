@@ -1,0 +1,7 @@
+<div class="container" [ngStyle]="{'background-image':'url(' + slide.bgUrl + ')'}">
+    <div class="inner-container">
+        <h1>{{ slide.heading }}</h1>
+        <h4>{{ slide.text }}</h4>
+        <button [routerLink]="slide.btnPath">{{ slide.btnText }}</button>
+    </div>
+</div>

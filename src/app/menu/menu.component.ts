@@ -13,18 +13,18 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   public categories:Category[] = [
-    {category:'',text:'салюты большие'},
-    {category:'',text:'салюты средние'},
-    {category:'',text:'салюты малые'},
-    {category:'',text:'римские свечи'},
-    {category:'',text:'ракеты'},
-    {category:'',text:'фонтаны'},
-    {category:'',text:'жуки и бабочки'},
-    {category:'',text:'хлопушки и бенгальские огни'},
-    {category:'',text:'петарды'},
-    {category:'',text:'фестивальные шары'},
-    {category:'',text:'дымовые фейерверки'},
-    {category:'',text:'наборы'}
+    {category:'big-salut',text:'салюты большие'},
+    {category:'medium-salut',text:'салюты средние'},
+    {category:'min-salut',text:'салюты малые'},
+    {category:'candles',text:'римские свечи'},
+    {category:'rocket',text:'ракеты'},
+    {category:'fountains',text:'фонтаны'},
+    {category:'bag-butterfly',text:'жуки и бабочки'},
+    // {category:'',text:'хлопушки и бенгальские огни'},
+    {category:'firecrackers',text:'петарды'},
+    {category:'balls',text:'фестивальные шары'},
+    // {category:'',text:'дымовые фейерверки'},
+    {category:'sets',text:'наборы'}
   ];
   ngOnInit() {
   }

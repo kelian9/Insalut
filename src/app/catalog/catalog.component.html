@@ -1,13 +1,14 @@
 <div class="container">
     <div class="main-content">
-            <div class="filter" *ngIf="filter()">
-                <app-filter></app-filter>
-            </div>
-            <div class="content-container">
-                <router-outlet></router-outlet>
-            </div>
+        <button class="filter-btn" (click)="openFilter()" *ngIf="filterMobile" [ngClass]="{'filter-btn-active' : !filterMobile}">Фильтр</button>
+        <div class="filter" *ngIf="filter()" [ngStyle]="{'height' : filterHeight + 'px'}" [ngClass]="{'mobile-filter-effect' : !filterMobile}">
+            <app-filter [hide]="filterMobile" (closeMobileFilter)="openFilter()"></app-filter>
         </div>
-        <div class="sales-container">
-            <app-sales></app-sales>
+        <div class="content-container">
+            <router-outlet></router-outlet>
         </div>
+    </div>
+    <div class="sales-container">
+        <app-sales></app-sales>
+    </div>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../catalog/model/product.model';
+import { CatalogService } from '../catalog/model/catalog.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data:CatalogService) { }
+
+  public popularProducts:Product[];
 
   ngOnInit() {
+    this.popularProducts = this.data.getPopularProducts();
+    console.log(this.popularProducts);
   }
 
 }

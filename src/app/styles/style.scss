@@ -144,3 +144,39 @@ button {
         transform: scale(1.07);
     }
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .logo {
+        width: 90px;
+        height: 65px;
+        margin-left: 40px;
+    }
+    .tel-container {
+        display: none;
+    }
+    .user-buttons-container {
+        width: 23%;
+        button {
+            width: 30%;
+            img {
+                width: 100%;
+            }
+            span {
+                display: none;
+            }
+        }
+        .placeholder {
+            width: 23%;
+            img {
+                height: 60%;
+            }
+        }
+    }
+    .share-container {
+        align-self: center;
+    }
+}

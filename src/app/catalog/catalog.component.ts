@@ -17,6 +17,14 @@ export class CatalogComponent implements OnInit {
     console.log(this.id);
   }
 
+  public filterMobile:boolean = (document.documentElement.clientWidth < 600) ? true : false;
+  public filterHeight:number = (document.documentElement.clientWidth < 600) ? 0 : 730;
+
+  public openFilter() {
+    this.filterMobile = !this.filterMobile;
+    this.filterHeight = (this.filterHeight == 730) ? 0 : 730;
+  }
+
   public filter() {
     if (this.id == 0 || !isNaN(this.id)) {
       return false;
