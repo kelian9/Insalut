@@ -152,3 +152,14 @@ form {
         background-color: #0f1215;
     }
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .modal {
+        width: 330px;
+        height: 450px;
+    }
+}

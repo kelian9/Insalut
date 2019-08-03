@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CatalogService } from './model/catalog.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription, Observable } from 'rxjs';
+import {  ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-catalog',
@@ -12,7 +11,7 @@ export class CatalogComponent implements OnInit {
 
   public id:number;
   public subscription: Subscription;
-  constructor(private data:CatalogService, private activateRoute: ActivatedRoute) {
+  constructor(private activateRoute: ActivatedRoute) {
     this.subscription = activateRoute.firstChild.params.subscribe(params=>this.id=+params['id']);
     console.log(this.id);
   }

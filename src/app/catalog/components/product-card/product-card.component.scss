@@ -28,7 +28,7 @@
     &:hover {
         border-color: #c34040;
         .image-container {
-            background-color: #ff5e57;
+            background: #ff5e57;
         }
     }
 }
@@ -39,7 +39,7 @@
     @extend %display-flex-row;
     justify-content: space-around;
     border-radius: 50%;
-    transition: 0.3s;
+    transition: 1s;
     img {
         width: 90%;
         height: 90%;
@@ -57,20 +57,7 @@ h2 {
     font-size: 10px;
     font-weight: 300;
     font-family: "Roboto Condensed", sans-serif;
-    color: rgb( 255, 255, 255 );
-}
-
-h1 {
-    font-size: 18px;
-    font-weight: 300;
-    font-family: "Roboto Condensed", sans-serif;
-    color: rgb( 236, 240, 241 );
-}
-
-.price {
-    font-size: 18.576px;
-    font-family: "Roboto Condensed", sans-serif;
-    color: rgb( 236, 240, 241 );
+    color: #2f3542;
 }
 
 .btns-container {
@@ -88,11 +75,28 @@ button {
 }
 
 .youtube-btn {
-    width: 27px;
-    height: 27px;
-    border: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #f4f4f4;
     border-radius: 50%;
     background-size: cover;
+    @extend %display-flex-row;
+    justify-content: space-around;
+    transition: 0.3s;
+    span {
+        display: block;
+        width: 0;
+        height: 0;
+        margin-left: 3px;
+        border-radius: 2px;
+        border-top: 6px solid transparent;
+        border-left: 10px solid #f4f4f4;
+        border-bottom: 6px solid transparent;
+    }
+    &:hover {
+        border-color: #ff5e57;
+        background: #ff5e57;
+    }
 }
 
 .basket-btn {
@@ -106,6 +110,11 @@ button {
     font-family: "Roboto Condensed", sans-serif;
     color: rgb( 255, 255, 255 );
     text-transform: uppercase;
+    transition: 0.3s;
+    &:hover {
+        background: #ff5e57;
+        border-color: #ff5e57;
+    }
 }
 
 @media screen and (max-width: 1400px) {

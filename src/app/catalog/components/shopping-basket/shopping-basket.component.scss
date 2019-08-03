@@ -1,0 +1,250 @@
+%display-flex-row {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%display-flex-column {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    padding-bottom: 115px;
+    @extend %display-flex-column;
+    .inner-container {
+        width: 60%;
+        height: 100%;
+    }
+}
+
+h1 {
+    font-size: 37.5px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: rgb( 236, 240, 241 );
+}
+
+.products-container {
+    width: 100%;
+    margin: 0 auto;
+    @extend %display-flex-column;
+    border-top: 1px solid #242933;
+    border-bottom: 1px solid #242933;
+}
+
+.card-container {
+    width: 100%;
+    height: 190px;
+    @extend %display-flex-row;
+    .info, .btns {
+        width: 300px;
+        height: 100%;
+        @extend %display-flex-row;
+    }
+    .btns {
+        width: 30%;
+    }
+    .img-container {
+        width: 135px;
+        height: 90px;
+        border-radius: 3px;
+        @extend %display-flex-row;
+        justify-content: space-around;
+        background: #ecf0f1;
+        img {
+            width: 80%;
+            height: 90%;
+        }
+    }
+    .number-container {
+        width: 150px;
+        justify-self: flex-end;
+        margin-right: 25px;
+        button {
+            width: 40px;
+            font-size: 30px;
+            outline: none;
+        }
+        .l {
+            border-right: 3px solid  rgb( 236, 240, 241 );
+        }
+        .r {
+            border-left: 3px solid  rgb( 236, 240, 241 );
+        }
+    }
+    .product-info {
+        height: 90px;
+        @extend %display-flex-column;
+        justify-self: flex-start;
+        margin-left: 20px;
+        text-align: left;
+        align-items: flex-start;
+    }
+    .price {
+        font-weight: 300;
+    }
+}
+
+h3, p {
+    font-size: 12.5px;
+    font-weight: 300;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #c1c5c6;
+}
+
+.delete-btn  {
+    width: 30px;
+    height: 26px;
+    position: relative;
+    top: -2px;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    @extend %display-flex-column;
+    justify-content: space-around;
+    transition: 0.3s;
+    z-index: 12;
+    &:hover {
+        transform: scale(1.1);
+        color: #ff5e57;
+        span,span::before,span::after { 
+            background-color: #ff5e57;
+        }
+    }
+    span,
+    span::before,
+    span::after  {
+        height: 2px;
+        width: 30px;
+        position: absolute;
+        display: block;
+        top: 50%;
+        left: 0;
+        background-color: #ffffff;
+        border-radius: 4px;
+        margin-top: 0px;
+        transition: 0.3s;
+        z-index: 201;
+        transition: 0.5s;
+    }
+    span {
+        width: 0;
+    }
+    span::before,
+    span::after {
+        content: "";
+        width: 30px;
+    }
+    span::before {
+        transform: rotate(45deg);
+    }
+    span::after {
+        transform: rotate(-45deg);
+        width: 32px;
+    }
+}
+
+.order-information {
+    width: 100%;
+    height: 122px;
+    margin-top: 30px;
+    @extend %display-flex-row;
+    .left-wrapper {
+        width: 45%;
+        height: 100%;
+        @extend %display-flex-column;
+        align-items: flex-start;
+        text-align: left;
+        button {
+            background: transparent;
+            padding: 5px 30px;
+            font-size: 25px;
+            font-weight: 300;
+            font-family: "Roboto Condensed", sans-serif;
+            color: rgb( 236, 240, 241 );
+            text-transform: uppercase;
+            border: 3px solid rgb( 236, 240, 241 );
+            border-radius: 3px;
+        }
+    }
+    .right-wrapper {
+        width: 30%;
+        height: 100%;
+        @extend %display-flex-column;
+        align-items: flex-end;
+        text-align: right;
+        h1 {
+            font-size: 25px;
+            font-weight: 300;
+            font-family: "Roboto Condensed", sans-serif;
+            color: #ecf0f1;
+        }
+        button {
+            padding: 5px;
+            border: 3px solid #ff5e57;
+            border-radius: 3px;
+            background: transparent;
+            font-size: 25px;
+            font-family: "Roboto Condensed", sans-serif;
+            color: rgb( 236, 240, 241 );
+            text-transform: uppercase;
+        }
+    }
+}
+
+label {
+    width: 100%;
+    @extend %display-flex-row;
+    font-size: 12.5px;
+    font-weight: 300;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ecf0f1;
+    .field {
+        position: relative;
+        width: 200px;
+        height: 15px;
+    }
+    input {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        font-size: 12.5px;
+        font-weight: 300;
+        font-family: "Roboto Condensed", sans-serif;
+        color: #ecf0f1;
+        box-sizing: border-box;
+        border: 1px solid #ecf0f1;
+        border-right: 0;
+        border-radius: 3px;
+        background: transparent;
+        outline: none;
+    }
+    input[type="submit"] {
+        position: absolute;
+        width: 30%;
+        height: 100%;
+        right: 0;
+        padding-right: 5px;
+        padding-left: 5px;
+        margin-right: 2.5px;
+        font-size: 8.333px;
+        font-weight: 300;
+        border-right: 1px solid #ecf0f1;
+        font-family: "Roboto Condensed", sans-serif;
+        color: rgb( 236, 240, 241 );
+        text-transform: uppercase;
+    }
+}

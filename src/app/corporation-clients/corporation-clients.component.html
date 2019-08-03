@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="heading">
+        <h1>Корпоративным клиентам</h1>
+        <p>Вы можете сделать заказ для сотрудников своей компании на индивидуальных условиях. Мы гарантируем Вам выгодную цену на пиротехнику высокого качества, бесплатную доставку в офис и оплату удобным для Вас способом.  Размер скидки расчитывается индивидуально для каждого клиента.
+            <br><br>Узнать подробнее Вы можете по телефону +7(985)25-222-25  или заполнив форму ниже :</p>
+    </div>
+    <div class="form-container">
+        <div class="bg"></div>
+        <form novalidate (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="inner">
+                <label>Фамилия Имя <span>*</span><span class="error red" *ngIf="formSubmitted && name.errors">Форма заполнена неверно</span><br>
+                    <input type="text" name="name" ngModel #name="ngModel" required minlength="7">
+                </label>
+                <label>Email <span>*</span><span class="error red" *ngIf="formSubmitted && email.errors">Форма заполнена неверно</span><br>
+                    <input type="text" name="email" required email ngModel #email="ngModel">
+                </label>
+                <label>Телефон <span>*</span><span class="error red" *ngIf="formSubmitted && tel.errors">Форма заполнена неверно</span><br>
+                    <input type="text" name="tel" required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" ngModel #tel="ngModel">
+                </label>
+                <label>Наименование компании <span>*</span><span class="error red" *ngIf="formSubmitted && company.errors">Форма заполнена неверно</span><br>
+                    <input type="text" name="company" required ngModel #company="ngModel">
+                </label>
+                <label>Ваше сообщение<br>
+                    <input type="text" name="message" class="message" ngModel #message="ngModel">
+                </label>
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>

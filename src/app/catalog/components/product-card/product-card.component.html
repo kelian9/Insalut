@@ -1,14 +1,14 @@
-<div class="container" (click)="openDetails(item.category, item.id)">
-    <div class="image-container">
+<div class="container">
+    <div class="image-container" (click)="openDetails(item.category, item.id)">
         <img [src]="item.imgPath[0]" alt="">
     </div>
     <div class="data-container">
         <h2>{{ item.category.translate }}</h2>
-        <h1>{{ item.heading }} <br> (1.25 x 100)</h1>
-        <p class="price">{{ item.price | currency:'RUB':'symbol-narrow' }}</p>
+        <h1 class="product-card-name">{{ item.heading }} <br> (1.25 x 100)</h1>
+        <p class="price">{{ item.price | currency:'RUB':'symbol-narrow' : '1.0-0' }}</p>
         <div class="btns-container">
-            <button class="youtube-btn"><i class="far fa-play-circle" style="color: white;font-size: 22px;font-weight: 300;"></i></button>
-            <button class="basket-btn">В корзину</button>
+            <button class="youtube-btn"><span></span></button>
+            <button (click)="putInBasket(item)" class="basket-btn">В корзину</button>
         </div>
     </div>
 </div>

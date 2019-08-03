@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/app/catalog/components/catalog-styles/product-styles.scss",
+              "src/app/styles/style.scss",
               "src/styles.scss",
               "node_modules/jquery-ui-dist/jquery-ui.css"
             ],

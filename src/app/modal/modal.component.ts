@@ -3,10 +3,12 @@ import { NgForm } from '@angular/forms';
 import { UserData } from './model/userData';
 import { AuthorizationService } from '../authorization/authorization.service';
 
+const styles = '../styles/style.scss';
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss', '../styles/style.scss']
+  styleUrls: ['./modal.component.scss', styles]
 })
 export class ModalComponent implements OnInit {
   @Output() close:EventEmitter<boolean> = new EventEmitter();

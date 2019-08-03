@@ -15,6 +15,8 @@
 
 .container {
     color: #ffffff;
+    @extend %display-flex-column;
+    align-items: flex-start;
 }
 
 h3 {
@@ -45,6 +47,49 @@ h1 {
 
 .card-container {
     width: 225px;
+}
+
+.switch-list-container {
+    height: 20px;
+    margin-top: 30px;
+    @extend %display-flex-row;
+    align-self: flex-end;
+    button {
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        margin-right: 4px;
+        border: 1px solid #bbbfc1;
+        border-radius: 100%;
+        background: transparent;
+        transition: 0.3s;
+        outline: none;
+        cursor: pointer;
+    }
+    .active-list {
+        background: #ff5e57;
+        border-color: #ff5e57;
+    }
+}
+
+.swipe-to-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    padding: 10px;
+    border-radius: 100%;
+    border: 0;
+    background: #ff5e57;
+    transform-origin: center;
+    transition: 0.3s;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+        transform: scale(1.1);
+        right: 48px;
+        bottom: 48px;
+        border: 1px solid #ecf0f1;
+    }
 }
 
 @media screen and (max-width: 1400px) {

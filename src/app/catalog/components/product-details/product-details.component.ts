@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CatalogService } from '../../model/catalog.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../model/product.model';
-import { Subscription, SubscriptionLike } from 'rxjs';
+import { Subscription } from 'rxjs';
+
+const styles = '../catalog-styles/product-styles.scss';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss']
+  styleUrls: ['./product-details.component.scss', styles]
 })
 export class ProductDetailsComponent implements OnInit {
 
@@ -28,7 +30,6 @@ export class ProductDetailsComponent implements OnInit {
 
   public activateImage(item:string) {
     if (item == this.selectedImage) {
-      console.log(this.selectedImage, item);
       return true;
     }
   }
@@ -47,16 +48,13 @@ export class ProductDetailsComponent implements OnInit {
   public product:Product;
   public similarProducts:Product[];
 
-  ngOnInit() {
-    // this.product = this.data.openProductDetails(this.id);
-    this.selectedImage = this.product.imgPath[0];
-    this.similarProducts = this.data.getProducts({},this.product.category.category);
+  public putInBasket(item:Product) {
+    this.data.putInBasket(item, this.productCount);
   }
 
-  ngDoCheck(): void {
-    //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
-    //Add 'implements DoCheck' to the class.
-    // this.product = this.data.openProductDetails(this.id);
+  ngOnInit() {
+    this.selectedImage = this.product.imgPath[0];
+    this.similarProducts = this.data.getProducts({},this.product.category.category).slice(0,9);
   }
 
 }

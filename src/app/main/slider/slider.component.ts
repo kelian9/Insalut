@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Switch } from './switch';
 import { Slide } from './slide';
 
 @Component({
@@ -12,22 +11,6 @@ export class SliderComponent implements OnInit {
   constructor() { }
 
   public slidePosition:number = 0;
-
-  // public moveSlideBack() {
-  //   if (this.slidePosition == 0) {
-  //     return;
-  //   }
-  //   this.slidePosition = this.slidePosition + 100;
-  //   this.activeSlide--;
-  // }
-
-  // public moveSlideNext() {
-  //   if (this.slidePosition == -100) {
-  //     return;
-  //   }
-  //   this.slidePosition = this.slidePosition - 100;
-  //   this.activeSlide++;
-  // }
   
   public activeSlide:number = 0;
 

@@ -34,7 +34,6 @@ form {
     width: 100%;
     height: 85%;
     @extend %display-flex-column;
-    flex-wrap: wrap;
     .switch-container {
         width: 200px;
         height: 20px;
@@ -124,5 +123,52 @@ form {
         font-weight: 300;
         color: rgb( 236, 240, 241 );
         text-transform: uppercase;  
+    }
+}
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 80%;
+        height: 720px;
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        height: 87%;
+        .switch-container {
+            align-self: center;
+        }
+        .fields {
+            height: 80%;
+            flex-direction: column;
+        }
+        .fields-container {
+            width: 100%;
+            height: 45%;
+        }
+        .phys-container {
+            height: 72%;
+        }
+        .entity-container {
+            height: 23%;
+            justify-content: space-between;
+        }
+        label {
+            input {
+                height: 25px;
+            }
+        }
+        .inn {
+            margin-top: 0;
+        }
+    }
+    button {
+        width: 100%;
+        height: 50px;
     }
 }

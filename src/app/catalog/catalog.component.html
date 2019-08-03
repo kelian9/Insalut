@@ -1,7 +1,7 @@
 <div class="container">
     <div class="main-content">
         <button class="filter-btn" (click)="openFilter()" *ngIf="filterMobile" [ngClass]="{'filter-btn-active' : !filterMobile}">Фильтр</button>
-        <div class="filter" *ngIf="filter()" [ngStyle]="{'height' : filterHeight + 'px'}" [ngClass]="{'mobile-filter-effect' : !filterMobile}">
+        <div class="filter" *ngIf="filter()" [ngStyle]="{'height': filterHeight + 'px'}" [ngClass]="{'mobile-filter-effect' : !filterMobile}">
             <app-filter [hide]="filterMobile" (closeMobileFilter)="openFilter()"></app-filter>
         </div>
         <div class="content-container">

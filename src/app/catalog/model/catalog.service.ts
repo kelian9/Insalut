@@ -34,10 +34,9 @@ export class CatalogService {
     // Отправлять запрос с категорией(для получения массива товаров конкретной категории)
     let h = this.categories.filter((item) => item.category == this.router.url.slice(9));
     this.products = [];
-    for (let i = 0; i < 9; i++) {
-      this.products.push(new Product(i, {category: h[0].category, translate: h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png','/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315, 'Описание карточки товара'));
+    for (let i = 0; i < 24; i++) {
+      this.products.push(new Product(i, 12313 + i, {category: h[0].category, translate: h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png','/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315 * (i+1), 'Описание карточки товара'));
     }
-    console.log(this.products[0]);
     this.selectedCategory.heading = h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1);
     this.selectedCategory.category = h[0].category;
     return this.selectedCategory;
@@ -52,7 +51,7 @@ export class CatalogService {
     //отправлять запрос на сервер для получения массива популярных товаров
     if (this.products.length == 0) {
       for (let i = 0; i < 9; i++) {
-        this.products.push(new Product(i, {category: 'sets', translate: 'наборы'.charAt(0).toUpperCase() + 'наборы'.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png', '/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315 * (i+1), 'Описание карточки товара'));
+        this.products.push(new Product(i, 12311 + i, {category: 'sets', translate: 'наборы'.charAt(0).toUpperCase() + 'наборы'.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png', '/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315 * (i+1), 'Описание карточки товара'));
       }
     }
     return this.products;
@@ -64,18 +63,28 @@ export class CatalogService {
     // Отправлять запрос с id товара
     let h = this.categories.filter((item) => {
       let index = this.router.url.slice(9).indexOf('/');
-      console.log(this.router.url.substr(9, index));
       return item.category == this.router.url.substr(9, index);
     });
-    console.log(h);
     this.products = [];
-    for (let i = 0; i < 9; i++) {
-      this.products.push(new Product(i, {category: h[0].category, translate: h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png', '/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315 * (i+1), 'Описание карточки товара'));
+    for (let i = 0; i < 24; i++) {
+      this.products.push(new Product(i,12139 + i,  {category: h[0].category, translate: h[0].heading.charAt(0).toUpperCase() + h[0].heading.slice(1)}, "Батарея \"Катюша\"", ['/assets/products/image.png', '/assets/categories/rocket.png'], {time: 30, babah: 5, height: 30, caliber:10}, 2315 * (i+1), 'Описание карточки товара'));
     }
     this.filter = false;
-    console.log(this.filter);
-    console.log(id);
-    console.log(this.products[id]);
     return this.products[id];
+  }
+
+  private shoppingBasket:{product:Product, count:number}[] = [];
+
+  public getShoppingBasket():{product:Product, count:number}[] {
+    return this.shoppingBasket;
+  }
+
+  public putInBasket(item:Product, count) {
+    this.shoppingBasket.push({product: item, count: count});
+  }
+
+  public deleteProductIntoBasket(i) {
+    let index = this.shoppingBasket.findIndex((item) => item.product.id == i);
+    this.shoppingBasket.splice(index, 1);
   }
 }

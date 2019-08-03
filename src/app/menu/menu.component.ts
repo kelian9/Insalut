@@ -1,11 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 import { Category } from './category';
+
+const styles = '../styles/style.scss';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss', '../styles/style.scss']
+  styleUrls: ['./menu.component.scss', styles]
 })
 export class MenuComponent implements OnInit {
 

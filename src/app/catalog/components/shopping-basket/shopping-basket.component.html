@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="inner-container">
+        <h1>Ваши покупки :</h1>
+        <div class="products-container" *ngIf="selectedProducts.length > 0">
+            <div class="card-container" *ngFor="let item of selectedProducts">
+                <div class="info">
+                    <div class="img-container">
+                        <img [src]="item.product.imgPath[0]" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-card-name">{{ item.product.heading }}</h2>
+                        <h3>{{ item.product.category.translate }}</h3>
+                        <p>{{ item.product.vendorCode }}</p>
+                        <h2 class="price">{{ item.product.price | currency:'RUB':'symbol-narrow' }}</h2>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="number-container">
+                        <button class="l" (click)="sub(item)">-</button>
+                        <p class="number">{{ item.count }}</p>
+                        <button class="r" (click)="add(item)">+</button>
+                    </div>
+                    <button (click)="deleteProductIntoBasket(item.product.id)" class="delete-btn">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="order-information">
+            <div class="left-wrapper">
+                <label>Введите Ваш промокод : 
+                    <div class="field">
+                        <input type="text">
+                        <input value="Отправить" type="submit">
+                    </div>
+                </label>
+                <button routerLink="catalog">В МАГАЗИН</button>
+            </div>
+            <div class="right-wrapper">
+                <div class="price-container">
+                    <h2 class="product-card-name">Сумма товаров : {{ totalPrice ? totalPrice : 0 | currency:'RUB':'symbol-narrow' }}</h2>
+                    <h1>Итого : {{ totalPrice ? totalPrice : 0 | currency:'RUB':'symbol-narrow' }}</h1>
+                </div>
+                <button>ОФОРМИТЬ ЗАКАЗ</button>
+            </div>
+        </div>
+    </div>
+</div>

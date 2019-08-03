@@ -21,6 +21,11 @@ import { ProductCardComponent } from './catalog/components/product-card/product-
 import { ProductDetailsComponent } from './catalog/components/product-details/product-details.component';
 import { ProductsSliderComponent } from './catalog/components/products-slider/products-slider.component';
 import { SlideComponent } from './main/slider/slide/slide.component';
+import { ShoppingBasketComponent } from './catalog/components/shopping-basket/shopping-basket.component';
+import { CorporationClientsComponent } from './corporation-clients/corporation-clients.component';
+import { CertificatesComponent } from './certificates/certificates.component';
+import { ContactsDataComponent } from './contacts-data/contacts-data.component';
+import { CatalogService } from './catalog/model/catalog.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,11 @@ import { SlideComponent } from './main/slider/slide/slide.component';
     ProductCardComponent,
     ProductDetailsComponent,
     ProductsSliderComponent,
-    SlideComponent
+    SlideComponent,
+    ShoppingBasketComponent,
+    CorporationClientsComponent,
+    CertificatesComponent,
+    ContactsDataComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +56,7 @@ import { SlideComponent } from './main/slider/slide/slide.component';
     FormsModule,
     RegistrationModule
   ],
-  providers: [AuthorizationService],
+  providers: [AuthorizationService, CatalogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,16 +17,16 @@
             <div class="production-links">
                 <a href="" class="production-link">Продукция</a>
                 <div class="category-container">
-                    <a href="" [routerLink]="'catalog' + item.category" *ngFor="let item of categories">{{ item.text }}</a>
+                    <a [routerLink]="'catalog/' + item.category" *ngFor="let item of categories">{{ item.text }}</a>
                 </div>
             </div>
             <div class="other-links">
-                <a routerLink="">Корпоративным клиентам</a>
+                <a routerLink="corporative-clients">Корпоративным клиентам</a>
                 <a routerLink="">Доставка и оплата</a>
                 <a routerLink="">Скидки</a>
-                <a routerLink="">Контакты</a>
+                <a routerLink="contacts-data">Контакты</a>
                 <a routerLink="">Отзывы</a>
-                <a routerLink="">Сертификаты</a>
+                <a routerLink="certificates">Сертификаты</a>
             </div>
         </div>
         <footer>

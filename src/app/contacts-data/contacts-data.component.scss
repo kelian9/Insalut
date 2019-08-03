@@ -1,0 +1,32 @@
+.container {
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 90px;
+}
+
+h1 {
+    padding-bottom: 20px;
+    font-size: 37.5px;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    color: rgb( 236, 240, 241 );
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 16.667px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgb( 236, 240, 241 );
+    font-weight: bold;
+}
+
+p {
+    font-size: 16.667px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: rgb( 236, 240, 241 );
+    span {
+        color: #b64541;
+    }
+}

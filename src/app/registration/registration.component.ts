@@ -4,10 +4,12 @@ import { AuthorizationService } from '../authorization/authorization.service';
 import { Phys } from './model/phys';
 import { Entity } from './model/entity';
 
+const styles = '../styles/style.scss';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss', '../styles/style.scss']
+  styleUrls: ['./registration.component.scss', styles]
 })
 export class RegistrationComponent implements OnInit {
 

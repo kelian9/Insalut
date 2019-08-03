@@ -57,8 +57,13 @@ button {
         height: 100%;
         transition: 0.4s;
         @extend %display-flex-row;
+        // justify-content: flex-start;
     }
 }
+
+// .card-container {
+//     margin-left: 10px;
+// }
 
 .switches-container {
     width: 50px;

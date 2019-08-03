@@ -1,11 +1,15 @@
 <div class="container">
     <div class="heading">
         <h3>Каталог / {{ selectedCategory.heading }}</h3>
-        <h1>{{ selectedCategory.heading }}</h1>
+        <h1 #top>{{ selectedCategory.heading }}</h1>
     </div>
     <div class="products-container">
-        <div class="card-container" *ngFor="let item of products">
+        <div class="card-container" *ngFor="let item of getProductsList()">
             <app-product-card [item]="item"></app-product-card>
         </div>
     </div>
+    <div class="switch-list-container">
+        <button class="switch" href="#top" (click)="switchList(btn.list);scrollToElement(top)" [ngClass]="{'active-list' : btn.list == activeList}" *ngFor="let btn of lists"></button>
+    </div>
+    <button class="swipe-to-top" (click)="scrollToElement(top)"><i class="fas fa-chevron-up" style="font-size: 25px;color:#ecf0f1;"></i></button>
 </div>

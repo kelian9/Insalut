@@ -6,6 +6,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ProductsComponent } from './catalog/components/products/products.component';
 import { CategoriesComponent } from './catalog/components/categories/categories.component';
 import { ProductDetailsComponent } from './catalog/components/product-details/product-details.component';
+import { ShoppingBasketComponent } from './catalog/components/shopping-basket/shopping-basket.component';
+import { CorporationClientsComponent } from './corporation-clients/corporation-clients.component';
+import { CertificatesComponent } from './certificates/certificates.component';
+import { ContactsDataComponent } from './contacts-data/contacts-data.component';
 
 const catalogRoutes: Routes = [
   {path:'', component: CategoriesComponent},
@@ -26,6 +30,10 @@ const routes: Routes = [
   {path: 'catalog/:category/:id', component: ProductDetailsComponent},
   {path: 'catalog/', component: CatalogComponent},
   {path: 'catalog', component: CatalogComponent, children: catalogRoutes},
+  {path: 'shopping-basket', component: ShoppingBasketComponent},
+  {path: 'corporative-clients', component: CorporationClientsComponent},
+  {path: 'certificates', component: CertificatesComponent},
+  {path: 'contacts-data', component: ContactsDataComponent},
   {path: 'registration', component: RegistrationComponent}
 ];
 
