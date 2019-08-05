@@ -4,12 +4,10 @@ import { AuthorizationService } from '../authorization/authorization.service';
 import { Phys } from './model/phys';
 import { Entity } from './model/entity';
 
-const styles = '../styles/style.scss';
-
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss', styles]
+  styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
 
@@ -21,8 +19,8 @@ export class RegistrationComponent implements OnInit {
   };
   constructor(private registration:AuthorizationService) { }
 
-  public phys:Phys;
-  public entity:Entity;
+  public physData:Phys;
+  public entityData:Entity;
 
   public switchUser() {
     this.user.phys = !this.user.phys;
@@ -31,26 +29,26 @@ export class RegistrationComponent implements OnInit {
 
   public onSubmit(form:NgForm) {
     this.formSubmitted = true;
-    this.phys = {
+    this.physData = {
       name: form.value.name,
       email: form.value.email,
       tel: form.value.tel,
       password: form.value.password
     };
 
-    if ((this.confirmPassword != this.phys.password) || form.invalid) {
+    if ((this.confirmPassword != this.physData.password) || form.invalid) {
       return;
     }
 
     if (form.value.company != undefined) {
-      this.entity = new Entity(this.phys, form.value.company, form.value.inn)
-      this.registration.registerEntity(this.entity);
+      this.entityData = new Entity(this.physData, form.value.company, form.value.inn)
+      this.registration.registerEntity(this.entityData);
       this.formSubmitted = false;
       form.reset();
       return;
     }
     
-    this.registration.registerPhys(this.phys);
+    this.registration.registerPhys(this.physData);
     this.formSubmitted = false;
     form.reset();
   };

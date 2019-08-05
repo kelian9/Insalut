@@ -1,0 +1,87 @@
+%display-flex-column {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;    
+}
+%display-flex-row {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form {
+    .switch-container {
+        width: 200px;
+        height: 20px;
+        @extend %display-flex-row;
+        align-self: flex-start;
+        label {
+            width: 45%;
+            font-size: 16.667px;
+            font-family: "Roboto Condensed", sans-serif;
+            color: rgb( 236, 240, 241 );
+            position: relative;
+            .checkbox {
+                content: '';
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                top: 2px;
+                border-radius: 50%;
+                border: 1px solid #bbbfc1;
+            }
+            .text {
+                margin-left: 20px;
+                font-weight: 300;
+            }
+            input {
+                position: absolute;
+                width: 80px;
+                height: 22px;
+                padding-right: 5px;
+                margin-left: 0px;
+                border-radius: 50%;
+                cursor: pointer;
+                opacity: 0;
+            }
+        }
+        .active {
+            border: 1px solid #d24e49;
+            background: #d24e49;
+        }
+    }
+}
+
+.btns-container {
+    width: calc(100% + 4px);
+    margin-top: 25px;
+    @extend %display-flex-row;
+    a {
+        text-decoration: none;
+        font-size: 16.667px;
+        font-weight: 300;
+        font-family: "Roboto Condensed", sans-serif;
+        color: rgb( 236, 240, 241 );
+        text-transform: uppercase;
+    }
+    button[type="submit"] {
+        font-size: 25px;
+        font-weight: 300;
+        font-family: "Montserrat", sans-serif;
+        color: rgb( 236, 240, 241 );
+        text-transform: uppercase;
+        background: transparent;
+        border: 2px solid #d24e49;
+        border-radius: 3px;
+        padding: 5px 50px;
+        transition: 0.3s;
+        &:hover {
+            transform: none;
+            border-color: chartreuse;
+        }
+    }
+}

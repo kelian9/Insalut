@@ -83,6 +83,8 @@ export class CatalogService {
     this.shoppingBasket.push({product: item, count: count});
   }
 
+  public totalPrice:number;
+
   public deleteProductIntoBasket(i) {
     let index = this.shoppingBasket.findIndex((item) => item.product.id == i);
     this.shoppingBasket.splice(index, 1);

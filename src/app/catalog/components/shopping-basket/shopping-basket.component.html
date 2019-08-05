@@ -41,7 +41,7 @@
                     <h2 class="product-card-name">Сумма товаров : {{ totalPrice ? totalPrice : 0 | currency:'RUB':'symbol-narrow' }}</h2>
                     <h1>Итого : {{ totalPrice ? totalPrice : 0 | currency:'RUB':'symbol-narrow' }}</h1>
                 </div>
-                <button>ОФОРМИТЬ ЗАКАЗ</button>
+                <button (click)="checkout()" routerLink="/order">ОФОРМИТЬ ЗАКАЗ</button>
             </div>
         </div>
     </div>

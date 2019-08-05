@@ -3,12 +3,10 @@ import { Product } from '../../model/product.model';
 import { CatalogService } from '../../model/catalog.service';
 import { Router } from '@angular/router';
 
-const styles = '../catalog-styles/product-styles.scss';
-
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss', styles]
+  styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
 

@@ -26,6 +26,11 @@ import { CorporationClientsComponent } from './corporation-clients/corporation-c
 import { CertificatesComponent } from './certificates/certificates.component';
 import { ContactsDataComponent } from './contacts-data/contacts-data.component';
 import { CatalogService } from './catalog/model/catalog.service';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ShippingPaymentComponent } from './shipping-payment/shipping-payment.component';
+import { OrderInfoComponent } from './order-info/order-info.component';
+import { OrderComponent } from './order/order.component';
+import { OrderContactDataComponent } from './order-contact-data/order-contact-data.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { CatalogService } from './catalog/model/catalog.service';
     ShoppingBasketComponent,
     CorporationClientsComponent,
     CertificatesComponent,
-    ContactsDataComponent
+    ContactsDataComponent,
+    ReviewsComponent,
+    ShippingPaymentComponent,
+    OrderInfoComponent,
+    OrderComponent,
+    OrderContactDataComponent
   ],
   imports: [
     BrowserModule,

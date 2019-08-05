@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../model/product.model';
 import { CatalogService } from '../../model/catalog.service';
-
-const styles = '../catalog-styles/product-styles.scss';
+import { OrderService } from 'src/app/order-service/order.service';
 
 @Component({
   selector: 'app-shopping-basket',
   templateUrl: './shopping-basket.component.html',
-  styleUrls: ['./shopping-basket.component.scss', styles]
+  styleUrls: ['./shopping-basket.component.scss']
 })
 export class ShoppingBasketComponent implements OnInit {
 
-  constructor(private data:CatalogService) { }
+  constructor(private data:CatalogService, private order:OrderService) { }
 
   public selectedProducts:{product:Product, count:number}[];
 
@@ -43,6 +42,16 @@ export class ShoppingBasketComponent implements OnInit {
   public add(item) {
     ++item.count;
     this.totalPrice = this.getTotalPrice();
+  }
+
+  public checkout() {
+    this.order.setSelectedProducts(this.selectedProducts);
+    this.order.setTotalPrice(this.totalPrice);
+    let orderInfo = [];
+    this.selectedProducts.forEach(element => {
+      orderInfo.push({name: element.product.heading, count: element.count});
+    });
+    this.data.totalPrice = this.totalPrice;
   }
 
   ngOnInit() {

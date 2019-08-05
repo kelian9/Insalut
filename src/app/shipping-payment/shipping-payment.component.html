@@ -1,0 +1,97 @@
+<div class="container">
+    <h1>Способы доставки и оплаты</h1>
+    <div class="content-container">
+        <form novalidate>
+            <div class="switch-container">
+                <label><span class="checkbox" [ngClass]="{'active': user.phys}"></span>
+                    <input type="checkbox" [checked]="user.phys" (click)="switchUser()" name="phys" id="phys"><span class="text" #physBtn>физ лицо</span>
+                </label>
+                <label><span class="checkbox" [ngClass]="{'active': user.entity}"></span>
+                    <input type="checkbox" [checked]="user.entity" (click)="switchUser()" name="entity" id="entity"><span class="text" #entityBtn>юр лицо</span>
+                </label>
+            </div>
+            <h2>Способ доставки :</h2>
+            <div class="shipping-container">
+                <div class="inner">
+                    <label>
+                        <span class="circle" [ngClass]="{'active': shipping[0].selected}"></span>
+                        <span class="name">Самовывоз</span>
+                        <span class="cost" *ngIf="shipping[0].selected">Бесплатно</span>
+                        <input type="radio" (click)="selectShippingMethod(0)" name="shipping" id="1" ngModel #pickup="ngModel">
+                    </label>
+                    <label>
+                        <span class="circle" [ngClass]="{'active': shipping[1].selected}"></span>
+                        <span class="name">Доставка внутри МКАД<br>
+                            <span class="little">курьерской службой</span>
+                        </span>
+                        <span class="cost" *ngIf="shipping[1].selected">Бесплатно</span>
+                        <input type="radio" (click)="selectShippingMethod(1)" name="shipping" value="mkad" id="2">
+                    </label>
+                    <label>
+                        <span class="circle" [ngClass]="{'active': shipping[2].selected}"></span>
+                        <span class="name">Доставка до 10км за МКАД<br>
+                            <span class="little">курьерской службой</span>
+                        </span>
+                        <span class="cost" *ngIf="shipping[2].selected">Бесплатно</span>
+                        <input type="radio" (click)="selectShippingMethod(2)" name="shipping" value="tenkm" id="3">
+                    </label>
+                    <label>
+                        <span class="circle" [ngClass]="{'active': shipping[3].selected}"></span>
+                        <span class="name">Доставка до 50км за МКАД<br>
+                            <span class="little">курьерской службой</span>
+                        </span>
+                        <span class="cost" *ngIf="shipping[3].selected">700₽</span>
+                        <input type="radio" (click)="selectShippingMethod(3)" name="shipping" value="fiftykm" id="4">
+                    </label>
+                    <label>
+                        <span class="circle" [ngClass]="{'active': shipping[4].selected}"></span>
+                        <span class="name">Доставка свыше 50км за МКАД<br>
+                            <span class="little">Необходимо уточнить стоимость у наших операторов</span>
+                        </span>
+                        <input type="radio" (click)="selectShippingMethod(4)" name="shipping" value="more" id="5">
+                    </label>
+                </div>
+            </div>
+            <h2>Способ оплаты :</h2>
+            <div class="payment-container">
+                <div class="left">
+                    <label>
+                        <span class="circle" [ngClass]="{'active': payment[0].selected}"></span>
+                        <span class="name">Наличными<br>
+                            <span class="little">при получении заказа</span>
+                        </span>
+                        <input type="radio" (click)="selectPaymentMethod(0)" name="payment" value="cash" id="">
+                    </label>
+                    <label>
+                        <span class="circle" [ngClass]="{'active': payment[1].selected}"></span>
+                        <span class="name">Банковской картой<br>
+                            <span class="little">при получении заказа</span>
+                        </span>
+                        <input type="radio" (click)="selectPaymentMethod(1)" name="payment" value="card" id="">
+                    </label>
+                    <label>
+                        <span class="circle" [ngClass]="{'active': payment[2].selected}"></span>
+                        <span class="name">Банковской картой онлайн<br>
+                            <span class="little">в форме ниже</span>
+                        </span>
+                        <input type="radio" (click)="selectPaymentMethod(2)" name="payment" value="online" id="">
+                    </label>
+                </div>
+                <div class="right">
+                    <label>
+                        <span class="circle" [ngClass]="{'active': payment[3].selected}"></span>
+                        <span class="name">Расчетный счет<br>
+                            <span class="little">Вашей компании</span>
+                        </span>
+                        <input type="radio" (click)="selectPaymentMethod(3)" name="payment" value="bank" id="">
+                    </label>
+                </div>
+            </div>
+            <div class="btns-container">
+                <a routerLink="contact-data"> <i class="fas fa-angle-left" style="font-size: 18px;"></i> НАЗАД К КОНТАКТАМ</a>
+                <button type="submit">ОПЛАТИТЬ</button>
+            </div>
+        </form>
+        <app-order-info [shippingPrice]="shippingPrice" [totalPrice]="totalPrice"></app-order-info>
+    </div>
+</div>

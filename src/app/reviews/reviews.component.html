@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Отзывы</h1>
+    <a href=""><span>+</span> Добавить отзыв</a>
+    <div class="reviews-container">
+        <div class="review" *ngFor="let item of reviews">
+            <div class="inner-container">
+                <h1>{{ item.name }}</h1>
+                <p>{{ item.review }}</p>
+            </div>
+        </div>
+    </div>
+</div>

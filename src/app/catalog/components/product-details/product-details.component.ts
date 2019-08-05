@@ -4,12 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../model/product.model';
 import { Subscription } from 'rxjs';
 
-const styles = '../catalog-styles/product-styles.scss';
-
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss', styles]
+  styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
 
