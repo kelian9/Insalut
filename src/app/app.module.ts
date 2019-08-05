@@ -31,6 +31,7 @@ import { ShippingPaymentComponent } from './shipping-payment/shipping-payment.co
 import { OrderInfoComponent } from './order-info/order-info.component';
 import { OrderComponent } from './order/order.component';
 import { OrderContactDataComponent } from './order-contact-data/order-contact-data.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,11 @@ import { OrderContactDataComponent } from './order-contact-data/order-contact-da
     FormsModule,
     RegistrationModule
   ],
-  providers: [AuthorizationService, CatalogService],
+  providers: [
+    AuthorizationService,
+    CatalogService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
