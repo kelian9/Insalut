@@ -146,3 +146,47 @@ label {
         height: 35px;
     }
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 85%;
+    }
+    .content-container {
+        flex-direction: column;
+    }
+    form {
+        width: 100%;
+        order: 2;
+    }
+    .shipping-container {
+        height: 420px;
+        padding-bottom: 30px;
+        .inner {
+            height: 90%;
+            justify-content: space-around;
+        }
+        .cost {
+            top: 80%;
+        }
+    }
+    .payment-container {
+        height: 245px;
+        flex-direction: column;
+        justify-content: space-around;
+        .left, .right {
+            width: 94%;
+            height: 70%;
+        }
+        .right {
+            height: 15%;
+        }
+    }
+    .btns-container {
+        height: 100px;
+        flex-direction: column;
+    }
+}

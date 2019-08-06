@@ -22,7 +22,7 @@ export class OrderService {
     if (total == undefined) {
       return;
     }
-    if (!isNaN(sum) && sum != undefined) {
+    if (!isNaN(sum)) {
       return {total:sum + total, isFinal:true};
     }
     return {total:this.totalPrice, isFinal:false};

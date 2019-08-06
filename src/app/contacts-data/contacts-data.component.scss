@@ -30,3 +30,13 @@ p {
         color: #b64541;
     }
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}

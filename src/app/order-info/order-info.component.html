@@ -4,7 +4,7 @@
         <h3>Товары : <span *ngFor="let item of orderInfo;let i = index;">{{item.name}} <span *ngIf="orderInfo[i+1]">,</span> </span></h3>
         <h3>Кол-во : <span *ngFor="let item of products;let i = index;">{{item.count}} <span *ngIf="products[i+1]">,</span> </span></h3>
         <h3>Сумма товаров : <span>{{totalPrice.isFinal == true ? totalPrice.total - shippingPrice : totalPrice.total}}</span></h3>
-        <h3 *ngIf="shippingPrice + 1 || shippingField">Доставка : <span>{{ shippingPrice + 1 ? shippingPrice + '₽': 'Неизвестно'}}</span></h3>
+        <h3 *ngIf="!contactPageActive">Доставка : <span>{{ shippingPrice + 1 ? shippingPrice + '₽': 'Неизвестно'}}</span></h3>
         <h2>Итого : {{ totalPrice.isFinal == true ? totalPrice.total + '₽' : '>' + totalPrice.total + '₽'}}</h2>
     </div>
     <a routerLink='/shopping-basket'>Изменить</a>

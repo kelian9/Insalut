@@ -11,6 +11,7 @@ export class OrderInfoComponent implements OnInit {
 
   @Input() totalPrice:{total, isFinal:boolean};
   @Input() shippingPrice:number;
+  @Input() contactPageActive:boolean;
 
   // Show or hide 'Доставка' field
   public shippingField:boolean = isNaN(this.shippingPrice);
@@ -25,6 +26,7 @@ export class OrderInfoComponent implements OnInit {
       const element = this.products[i];
       this.orderInfo.push({name: element.product.heading, count: element.count});
     }
+    this.shippingPrice = this.order.getShippingPrice();
     this.totalPrice = this.order.getTotalPrice();
   }
 

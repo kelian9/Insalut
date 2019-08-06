@@ -63,3 +63,14 @@ a {
     font-family: "Roboto Condensed", sans-serif;
     color: rgb( 236, 240, 241 );
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .order-info-container {
+        width: 300px;
+        margin-top: 20px;
+    }
+}

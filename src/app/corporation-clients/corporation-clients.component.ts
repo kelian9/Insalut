@@ -32,6 +32,8 @@ export class CorporationClientsComponent implements OnInit {
     form.reset();
   }
 
+  public bg:boolean = document.documentElement.clientWidth < 600 ? false : true;
+
   ngOnInit() {
   }
 

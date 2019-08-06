@@ -74,3 +74,15 @@ a {
     }
 }
 
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .reviews-container {
+        flex-direction: column;
+    }
+    .review {
+        margin-top: 15px;
+    }
+}

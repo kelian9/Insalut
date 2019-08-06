@@ -101,3 +101,24 @@ label {
         outline: none;  
     }
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 85%;
+    }
+    .content-container {
+        flex-direction: column;
+    }
+    form {
+        width: 100%;
+        order: 2;
+    }
+    .btns-container {
+        height: 100px;
+        flex-direction: column;
+    }
+}

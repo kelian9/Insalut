@@ -50,3 +50,19 @@ p {
         margin-left: 10px;
     }
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    .certificates-container {
+        flex-direction: column;
+        align-content: space-around;
+        height: 100%;
+        img {
+            height: 280px;
+            margin-top: 10px;
+        }
+    }
+}

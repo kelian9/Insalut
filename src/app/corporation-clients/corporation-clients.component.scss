@@ -104,3 +104,21 @@ button {
     outline: none;
     cursor: pointer;
 }
+
+// 
+// Mobile styles
+// 
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 100%;
+        .inner {
+            width: 90%;
+            margin-right: 0;
+        }
+    }
+    button {
+        width: 100%;
+        align-self: center;
+    }
+}

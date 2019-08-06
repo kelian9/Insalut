@@ -47,7 +47,9 @@ export class OrderContactDataComponent implements OnInit {
     form.reset();
   };
 
+  public contactPageActive:boolean;
   ngOnInit() {
+    this.contactPageActive = true;
   }
 
 }
