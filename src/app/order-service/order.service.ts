@@ -16,6 +16,10 @@ export class OrderService {
     this.totalPrice = price;
   }
 
+  // Если товаров в корзине нет - нет итоговой цены
+  // Если цена доставки не NaN, то стоимость заказа = цене доставки + сумме товаров
+  // значит Цена итоговая => isFinal = true
+  // В остальных случаях указываем итоговую цену как итоговую на данный момент, isFinal = false
   public getTotalPrice() {
     let sum = this.getShippingPrice();
     let total = this.totalPrice;
@@ -51,6 +55,7 @@ export class OrderService {
   }
 
   // Shipping and Payment
+  // Data for switches
   private shipping:Shipping[] = [
     {method: 'pickup', selected: true, price: 0},
     {method: 'mkad', selected: false, price: 0},

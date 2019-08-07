@@ -147,6 +147,20 @@ button {
 }
 
 // 
+// Tablets styles
+// 
+
+// @media screen and (min-width: 601px) and (max-width: 1025px) {
+//     .tel-container {
+//         margin-left: 0;
+//         width: 35px;
+//         .tel-numbers {
+//             display: none;
+//         }
+//     }
+// }
+
+// 
 // Mobile styles
 // 
 
@@ -157,7 +171,19 @@ button {
         margin-left: 40px;
     }
     .tel-container {
-        display: none;
+        width: 35px;
+        margin-left: 0;
+        .tel-icon {
+            width: 32px;
+            height: 32px;
+            img {
+                width: 23px;
+                height: 25px;
+            }
+        }
+        .tel-numbers {
+            display: none;
+        }
     }
     .user-buttons-container {
         width: 23%;

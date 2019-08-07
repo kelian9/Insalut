@@ -13,14 +13,15 @@ export class AuthorizationService {
   private phys:Phys;
   private entity: Entity;
   
-  public registerPhys(user:Phys) {
-    this.phys = user;
-    console.log(this.phys);
-  }
-
-  public registerEntity(user:Entity) {
-    this.entity = user;
-    console.log(this.entity);
+  public register(user:Phys|Entity) {
+    if ((<Entity>user).company != undefined) {
+      //запрос с регистрацией юр.лица
+      console.log("Юр. лицо", user);
+      return;
+    }
+    //запрос с регистрацией физ.лица
+    console.log("Физ. лицо", user);
+    return;
   }
 
   public signIn(userData:UserData) {

@@ -15,6 +15,8 @@ export class ProductsSliderComponent implements OnInit {
   public slidePosition:number = 0;
   public switches:Switch[]=[];
 
+  public sliderWidth:string;
+
   public getSlidesCount() {
     if (document.documentElement.clientWidth < 600) {
       return this.selectedProducts.length;
@@ -88,6 +90,7 @@ export class ProductsSliderComponent implements OnInit {
   ngOnInit() {
     this.switches = this.getSwitches();
     this.moveIndex = (document.documentElement.clientWidth < 600) ? 100 : 12.5;
+    this.sliderWidth = document.documentElement.clientWidth > 2000 ? 225 * this.selectedProducts.length + 'px' : this.switches.length * 100 + '%';
   }
 
 }

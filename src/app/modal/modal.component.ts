@@ -26,6 +26,8 @@ export class ModalComponent implements OnInit {
 
   public formSubmitted:boolean = false;
 
+  // Проверка валидности формы, а затем отправка валидных данных через сервис авторизации на backend
+  // Сброс полей формы
   public onSubmit(form:NgForm) {
     this.formSubmitted = true;
     if(form.invalid == true) {

@@ -2,11 +2,11 @@
     <h1>Регистрация</h1>
     <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div class="switch-container">
-            <label><span class="checkbox" [ngClass]="{'active': user.phys}"></span>
-                <input type="checkbox" [checked]="user.phys" (click)="switchUser()" name="phys" id="phys"><span class="text" #physBtn>физ лицо</span>
+            <label><span class="checkbox" [ngClass]="{'active': userType.phys}"></span>
+                <input type="checkbox" [checked]="userType.phys" (click)="switchUser()" name="phys" id="phys"><span class="text" #physBtn>физ лицо</span>
             </label>
-            <label><span class="checkbox" [ngClass]="{'active': user.entity}"></span>
-                <input type="checkbox" [checked]="user.entity" (click)="switchUser()" name="entity" id="entity"><span class="text" #entityBtn>юр лицо</span>
+            <label><span class="checkbox" [ngClass]="{'active': userType.entity}"></span>
+                <input type="checkbox" [checked]="userType.entity" (click)="switchUser()" name="entity" id="entity"><span class="text" #entityBtn>юр лицо</span>
             </label>
         </div>
         <div class="fields">
@@ -23,16 +23,16 @@
                 <label>Пароль<span class="red">*</span><span class="error red" *ngIf="formSubmitted && password.errors">Форма заполнена неверно</span><br>
                     <input type="password" name="password" required ngModel #password="ngModel" minlength="6">
                 </label>
-                <label>Подтверждение пароля<span class="red">*</span><span class="error red" *ngIf="formSubmitted && phys.password != confirmPassword">Неверно</span><br>
+                <label>Подтверждение пароля<span class="red">*</span><span class="error red" *ngIf="formSubmitted && userPassword != confirmPassword">Неверно</span><br>
                     <input type="password" name="confirm" [(ngModel)]="confirmPassword" required>
                 </label>
             </div>
-            <div class="fields-container entity-container" *ngIf="user.entity">
+            <div class="fields-container entity-container" *ngIf="userType.entity">
                 <label class="company">Наименование компании<span class="red">*</span><span class="error red" *ngIf="formSubmitted && company.errors">Форма заполнена неверно</span><br>
-                    <input type="text" name="company" [required]="user.entity" ngModel #company="ngModel">
+                    <input type="text" name="company" [required]="userType.entity" ngModel #company="ngModel">
                 </label>
                 <label class="inn">ИНН<span class="red">*</span><span class="error red" *ngIf="formSubmitted && inn.errors">Форма заполнена неверно</span><br>
-                    <input type="text" name="inn" [required]="user.entity" ngModel #inn="ngModel">
+                    <input type="text" name="inn" [required]="userType.entity" ngModel #inn="ngModel">
                 </label>
             </div>
         </div>

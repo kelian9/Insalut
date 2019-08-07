@@ -2,7 +2,7 @@
     <button (click)="moveSlideBack()"><i class="fas fa-angle-left arrow" style="font-size: 30px;"></i></button>
     <div class="content">
         <div class="slider">
-            <div class="inner-container" [ngStyle]="{'width': switches.length * 100 + '%', 'transform' : 'translateX(' + slidePosition / switches.length + '%)'}">
+            <div class="inner-container" [ngStyle]="{'width': sliderWidth, 'transform' : 'translateX(' + slidePosition / switches.length + '%)'}">
                 <div class="card-container" *ngFor="let item of selectedProducts">
                     <app-product-card [item]="item"></app-product-card>
                 </div>

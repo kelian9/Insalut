@@ -175,6 +175,25 @@ a {
     }
 }
 
+// Tablets
+
+@media screen and (min-widtH: 601px) and (max-width: 770px) {
+    .buy-container {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 120px;
+    }
+    .bin {
+        height: 50px;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1040px) {
+    .number-container {
+        width: 140px;
+    }
+}
+
 // 
 // Mobile styles
 // 

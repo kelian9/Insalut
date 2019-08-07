@@ -193,11 +193,25 @@ button {
     color: rgb( 15, 18, 21 );
 }
 
+// Tablets
+
+@media screen and (min-width: 900px) and (max-width: 1025px) {
+    .tel-container {
+        margin-left: -150px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 899px) {
+    .tel-container {
+        margin-left: 0px;
+    }
+}
+
 // 
 // Mobile styles
 // 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .menu-container {
         width: 100%;
         height: 120vh;

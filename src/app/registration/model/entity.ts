@@ -1,5 +1,3 @@
-import { Phys } from './phys';
-
 export class Entity {
-    constructor(public mainData:Phys, public company:string, public inn:string) {}
+    constructor(public name:string, public email:string, public tel:number, public password:string, public company:string, public inn:string) {}
 }
